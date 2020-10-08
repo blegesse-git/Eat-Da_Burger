@@ -8,7 +8,7 @@ $(function(){
         }
         console.log(newBurger)
 
-        // send this new info to the db 
+       
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
@@ -20,7 +20,7 @@ $(function(){
 
     });
 
-    $("#eatburger").on("click", function(event){
+    $(".eatburger").on("click", function(event){
         
 
         var id = $(this).data("id")
@@ -28,7 +28,7 @@ $(function(){
             devoured: 1
         }
 
-        $.ajax("/api/burger/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: devouredBurger
         }).then(function(){
