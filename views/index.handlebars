@@ -1,41 +1,53 @@
 {{!-- burger pic here --}}
-<h3 class="topic">Eat-Da-Burger!</h3>
-<img src="/public/assets/img/burgers.png" alt="burger image">
-
-
-<div class="row">
-    <div class="col-sm-6"> 
-       <ul>
-            {{#each burgers}}
-                {{#unless devoured}}
-                    <span>{{this.id}} - {{this.burger_name}}</span>
-                    <button type="button" class="eatburger" id="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">EAT!</button>
-                    <hr>
-                {{/unless}}
-            {{/each}}
-        </ul> 
+<div class="container">
+    <div class="jumbotron" >
+        <h1 class="topic">Eat-Da-Burger!</h1>
+        <img src="./assets/img/burger2.jpg" id="bu"></img>
+        
     </div>
 
 
-    <div class="col-sm-6">
-       <ul>
-            {{#each burgers}}
-                {{#if devoured}}
-                    <span> {{this.id}} - {{this.burger_name}}</span>
-                    <hr>
-                {{/if}}
-            {{/each}}
-        </ul> 
+
+
+    <div class="row">
+        
+            <div class="col-sm-6"> 
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                                <span>{{this.id}} - {{this.burger_name}}</span>
+                                <button type="button" class="eatburger" id="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">EAT!</button>
+                                <hr>
+                        {{/unless}}
+                    {{/each}}
+                </ul> 
+            </div>
+        
+        
+        
+        
+        
+            <div class="col-sm-6">
+                <ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <span> {{this.id}} - {{this.burger_name}}</span>
+                            <hr>
+                        {{/if}}
+                    {{/each}}
+                </ul> 
+            </div>
+        
+        
     </div>
+
+
+
+    <form class="burger-form>">
+        <input class="col-s-4" type="text" id="newburger" name="burger">
+        <button type="submit" id="submit">Submit</button>
+    </form>
 </div>
-
-
-
-<form class="burger-form>">
-    <input class="col-s-4" type="text" id="newburger" name="burger">
-    <button type="submit" id="submit">Submit</button>
-</form>
-
 
 
 

@@ -68,7 +68,7 @@ var orm = {
     },
     updateOne: function(table, objColVals, condition, cb){
         var queryString = "UPDATE " + table;
-
+// UPDATE burger SET devour = 1 WHERE id = ?
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
